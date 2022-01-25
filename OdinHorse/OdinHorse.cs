@@ -180,8 +180,10 @@ namespace OdinHorse
             private void Start()
             {
                 var HumanoidAI = gameObject.GetComponent<Humanoid>();
+                var znet = gameObject.GetComponent<ZNetView>();
                 if (HumanoidAI.IsTamed())
                 {
+                    if (znet.GetZDO().GetBool("isTamed") == false) return;
                     var temptransform =
                         OdinHorse.raeHorse.Prefab.transform.Find(
                             "Visual/horse_BIP/horse Pelvis/horse Spine/horse Spine1/BagBag");

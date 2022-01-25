@@ -68,22 +68,6 @@ public class Patches
         }
     }
 
-    [HarmonyPatch(typeof(Tameable), nameof(Tameable.Tame))]
-    public static class TameBagPatch
-    {
-        public static void Prefix(Tameable __instance)
-        {
-            if (!__instance.gameObject.name.StartsWith("rae_OdinHorse")) return;
-            var temptransform =
-                OdinHorse.OdinHorse.raeHorse.Prefab.transform.Find(
-                    "Visual/horse_BIP/horse Pelvis/horse Spine/horse Spine1/BagBag");
-            if (temptransform)
-            {
-                temptransform.gameObject.SetActive(true);
-            }
-        }
-    }
-
     [HarmonyPatch(typeof(Tameable), nameof(Tameable.GetHoverText))]
     public static class HoverTextPatch
     {
@@ -95,6 +79,25 @@ public class Patches
         }
     }
 
+    [HarmonyPatch(typeof(MonsterAI), nameof(MonsterAI.MakeTame))]
+    public static class MakeTamePatch
+    {
+        public static void Prefix(MonsterAI __instance)
+        {
+            if (!__instance.gameObject.name.StartsWith("rae_OdinHorse")) return;
+            var temptransform =
+                __instance.gameObject.transform.Find(
+                    "Visual/horse_BIP/horse Pelvis/horse Spine/horse Spine1/BagBag");
+            if (temptransform)
+            {
+                temptransform.gameObject.SetActive(true);
+            }
+
+            var znet = __instance.gameObject.GetComponent<ZNetView>();
+            znet.GetZDO().Set("isTamed", true);
+        }
+    }
+    
     [HarmonyPatch(typeof(CharacterDrop), nameof(CharacterDrop.OnDeath))]
     public static class DropHorseStuffPatch
     {
