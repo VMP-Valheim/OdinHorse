@@ -177,7 +177,7 @@ namespace OdinHorse
 
         public class BagOnEnable : MonoBehaviour
         {
-            private void Start()
+            private void OnEnable()
             {
                 var HumanoidAI = gameObject.GetComponent<Humanoid>();
                 var znet = gameObject.GetComponent<ZNetView>();
