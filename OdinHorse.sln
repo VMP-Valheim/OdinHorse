@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OdinHorse", "OdinHorse\OdinHorse.csproj", "{ACBED97C-981F-4238-AFD0-6B22DBDD6E91}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACBED97C-981F-4238-AFD0-6B22DBDD6E91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACBED97C-981F-4238-AFD0-6B22DBDD6E91}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACBED97C-981F-4238-AFD0-6B22DBDD6E91}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACBED97C-981F-4238-AFD0-6B22DBDD6E91}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
